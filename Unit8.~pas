@@ -1,0 +1,47 @@
+unit Unit8;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Grids, DBGrids, DB, DBTables, DBCtrls, ComCtrls;
+
+type
+  TForm8 = class(TForm)
+    DateTimePicker1: TDateTimePicker;
+    DateTimePicker2: TDateTimePicker;
+    Label1: TLabel;
+    Label2: TLabel;
+    DBLookupComboBox1: TDBLookupComboBox;
+    Label3: TLabel;
+    DataSource2: TDataSource;
+    Query2: TQuery;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    Query1: TQuery;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form8: TForm8;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm8.Button1Click(Sender: TObject);
+begin
+Query1.Close;
+Query1.ParamByName('D1').Value:=DateTimePicker1.Date;
+Query1.ParamByName('D2').Value:=DateTimePicker2.Date;
+Query1.ParamByName('NÑ').Value:=Query2.FieldByName('ID').Value;
+Query1.Open;
+end;
+
+end.
+ 

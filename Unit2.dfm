@@ -1,0 +1,142 @@
+object Form2: TForm2
+  Left = 211
+  Top = 226
+  Width = 1191
+  Height = 306
+  Caption = #1050#1083#1080#1077#1085#1090
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 0
+    Width = 1057
+    Height = 273
+    DataSource = DataSource1
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'ID'
+        Title.Caption = 'ID '#1082#1083#1080#1077#1085#1090#1072
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'FIO'
+        Title.Caption = #1060#1048#1054
+        Width = 259
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DATA_RO'
+        Title.Caption = #1044#1072#1090#1072' '#1088#1086#1078#1076#1077#1085#1080#1103
+        Width = 85
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SERIY_P'
+        Title.Caption = #1057#1077#1088#1080#1103' '#1087#1072#1089#1087#1086#1088#1090#1072
+        Width = 89
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NOMER_P'
+        Title.Caption = #1053#1086#1084#1077#1088' '#1087#1072#1089#1087#1086#1088#1090#1072
+        Width = 101
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'PROPISKA'
+        Title.Caption = #1040#1076#1088#1077#1089' '#1087#1088#1086#1087#1080#1089#1082#1080
+        Width = 272
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SUDIMOST'
+        Title.Caption = #1057#1074#1077#1076#1077#1085#1080#1103' '#1086' '#1089#1091#1076#1080#1084#1086#1089#1090#1080
+        Width = 144
+        Visible = True
+      end>
+  end
+  object Button1: TButton
+    Left = 1064
+    Top = 0
+    Width = 113
+    Height = 49
+    Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 1064
+    Top = 56
+    Width = 113
+    Height = 49
+    Caption = #1048#1079#1084#1077#1085#1080#1090#1100
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 1064
+    Top = 112
+    Width = 113
+    Height = 49
+    Caption = #1059#1076#1072#1083#1080#1090#1100
+    TabOrder = 3
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 1064
+    Top = 168
+    Width = 113
+    Height = 49
+    Caption = #1047#1072#1082#1088#1099#1090#1100
+    TabOrder = 4
+    OnClick = Button4Click
+  end
+  object DataSource1: TDataSource
+    DataSet = Query1
+    Left = 920
+    Top = 120
+  end
+  object Query1: TQuery
+    Active = True
+    DatabaseName = 'NK'
+    RequestLive = True
+    SQL.Strings = (
+      'SELECT*FROM K')
+    Left = 864
+    Top = 152
+  end
+  object QueryDel: TQuery
+    DatabaseName = 'NK'
+    DataSource = DataSource1
+    SQL.Strings = (
+      'delete from k where id=:n')
+    Left = 1144
+    Top = 128
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'n'
+        ParamType = ptUnknown
+      end>
+  end
+end

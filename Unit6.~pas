@@ -1,0 +1,46 @@
+unit Unit6;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, DB, DBTables, ComCtrls, Grids, DBGrids, DBCtrls;
+
+type
+  TForm6 = class(TForm)
+    DBGrid1: TDBGrid;
+    DateTimePicker1: TDateTimePicker;
+    DateTimePicker2: TDateTimePicker;
+    DataSource1: TDataSource;
+    Query1: TQuery;
+    Label1: TLabel;
+    Label2: TLabel;
+    Button1: TButton;
+    DBLookupComboBox1: TDBLookupComboBox;
+    Label3: TLabel;
+    DataSource2: TDataSource;
+    Query2: TQuery;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form6: TForm6;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm6.Button1Click(Sender: TObject);
+begin
+Query1.Close;
+Query1.ParamByName('D1').Value:=DateTimePicker1.Date;
+Query1.ParamByName('D2').Value:=DateTimePicker2.Date;
+Query1.ParamByName('NU').Value:=Query2.FieldByName('ID').Value;
+Query1.Open;
+end;
+
+end.
